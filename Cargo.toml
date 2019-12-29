@@ -1,0 +1,19 @@
+[package]
+name = "rust-bluepill-blinky"
+version = "0.1.0"
+authors = ["Lukasz Okraszewski <neo1936@gmail.com>"]
+edition = "2018"
+
+[profile.release]
+# optimize for size ('z' would optimize even more)
+opt-level = 's'
+# link with link time optimization (lto).
+lto = true
+# enable debugging in release mode.
+debug = true
+
+[dependencies]
+stm32f1 = {version = "0.6.0", features = ["stm32f103", "rt"]}
+cortex-m-rt = "0.6.7"
+cortex-m = "0.5.8"
+panic-halt = "0.2.0"
